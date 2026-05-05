@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавить продукт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>🧊 Pantry Pal</header>
+
+<nav>
+  <a href="index.html">Dashboard</a>
+  <a href="inventory.html">Inventory</a>
+  <h2>➕ Добавить продукт</h2>
+</nav>
+
+<div class="container">
+  <h2>➕ Добавить продукт</h2>
+
+  <form onsubmit="addItem(event)">
+    <input type="text" id="name" placeholder="Название" required>
+
+    <input type="date" id="expiry" required>
+
+    <select id="category">
+      <option value="meat">🥩 Мясо</option>
+      <option value="dairy">🥛 Молочка</option>
+      <option value="vegetables">🥦 Овощи</option>
+      <option value="bread">🍞 Хлеб</option>
+    </select>
+
+    <button>Добавить</button>
+  </form>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function addItem(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let expiry = document.getElementById("expiry").value;
+  let category = document.getElementById("category").value;
+
+  addItemData(name, expiry, category);
+
+  alert("Добавлено!");
+  window.location.href = "inventory.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderDashboard()">
+
+<header>
+  <h1>Pantry Pal</h1>
+</header>
+
+<nav>
+  <h2>🏠 Главная</h2>
+  <a href="inventory.html">Inventory</a>
+  <a href="add.html">Add Item</a>
+</nav>
+
+<div class="container">
+  <h2>Dashboard</h2>
+
+  <div class="card">
+    Всего продуктов: <span id="total">0</span>
+  </div>
+
+  <div class="card">
+    Скоро испортятся: <span id="expiring">0</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<h2>📊 Dashboard</h2>
+
+<div class="card">
+  🧊 Всего продуктов: <b><span id="total">0</span></b>
+</div>
+
+<div class="card">
+  ⚠️ Скоро испортятся: <b><span id="expiring">0</span></b>
+</div>

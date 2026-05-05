@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Инвентарь</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="renderInventory()">
+
+<header>🧊 Pantry Pal</header>
+
+<nav>
+  <a href="index.html">Dashboard</a>
+  <h2>🧾 Инвентарь</h2>
+  <a href="add.html">Add Item</a>
+</nav>
+
+<div class="container">
+  <h2>🧾 Инвентарь</h2>
+
+  <div class="card">
+    <b>Фильтр:</b><br><br>
+    <button onclick="renderInventory('all')">Все</button>
+    <button onclick="renderInventory('meat')">🥩</button>
+    <button onclick="renderInventory('dairy')">🥛</button>
+    <button onclick="renderInventory('vegetables')">🥦</button>
+    <button onclick="renderInventory('bread')">🍞</button>
+  </div>
+
+  <button onclick="clearAll()">🗑 Очистить всё</button>
+
+  <div id="list"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
