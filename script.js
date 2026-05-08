@@ -88,3 +88,101 @@ function renderDashboard() {
   document.getElementById("total").innerText = total;
   document.getElementById("expiring").innerText = expiring;
 }
+
+//added Myrza
+async function addItem(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    const expiry = document.getElementById("expiry").value;
+
+    const category = document.getElementById("category").value;
+
+    const quantity = document.getElementById("quantity").value;
+
+    const response = await fetch("/api/add", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            name: name,
+
+            expiry: expiry,
+
+            category: category,
+
+            quantity: Number(quantity)
+        })
+    });
+
+    if (response.ok) {
+
+        alert("Продукт добавлен!");
+
+        window.location.href = "inventory.html";
+
+    } else {
+
+        alert("Ошибка!");
+    }
+}
+
+async function loadInventory() {
+
+    const response = await fetch("/api/inventory");
+
+    const items = await response.json();
+
+    const list = document.getElementById("inventory");
+
+    list.innerHTML = "";
+
+    items.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <b>${item.name}</b>
+            (${item.category})
+            - ${item.quantity} шт.
+            <br>
+            Срок: ${item.expiry}
+            <hr>
+        `;
+
+        list.appendChild(li);
+    });
+}
+
+async function loadInventory() {
+
+  const response = await fetch("/api/inventory");
+
+  const items = await response.json();
+
+  const list = document.getElementById("inventory");
+
+  list.innerHTML = "";
+
+  items.forEach(item => {
+
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+    <b>${item.name}</b>
+    (${item.category})
+    - ${item.quantity} шт.
+    <br>
+    Срок: ${item.expiry}
+    <hr>`;
+
+    list.appendChild(li);
+  });
+}

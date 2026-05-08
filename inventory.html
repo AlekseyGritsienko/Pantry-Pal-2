@@ -4,7 +4,7 @@
   <title>Инвентарь</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="renderInventory()">
+<body onload="loadInventory()">
 
 <header>🧊 Pantry Pal</header>
 
@@ -17,6 +17,7 @@
 <div class="container">
   <h2>🧾 Инвентарь</h2>
 
+  <ul id="inventory"></ul>
   <div class="card">
     <b>Фильтр:</b><br><br>
     <button onclick="renderInventory('all')">Все</button>
