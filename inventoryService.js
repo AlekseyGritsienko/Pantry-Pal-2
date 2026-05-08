@@ -1,7 +1,7 @@
 import { getInventory, createItem } from "../api/inventoryApi";
 import { mockItems } from "../mocks/inventoryMock";
 
-const USE_MOCK = true; //здесь поменять на false, когда будет готов бэкенд
+const USE_MOCK = false; //здесь поменять на false, когда будет готов бэкенд
 
 export async function fetchItems() {
   if (USE_MOCK) {
